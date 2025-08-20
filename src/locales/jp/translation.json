@@ -1,0 +1,15 @@
+{
+  "header": {
+    "opening": "オープニング",
+    "ending": "エンディング"
+  },
+  "home": {
+    "welcome": "ようこそ",
+    "title": "アニメランキングハブ"
+  },
+  "settings": {
+    "title": "設定",
+    "language": "言語",
+    "back": "戻る"
+  }
+}

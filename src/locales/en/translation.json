@@ -1,0 +1,15 @@
+{
+  "header": {
+    "opening": "Opening",
+    "ending": "Ending"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "title": "Anime Ranking Hub"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "back": "Back"
+  }
+}

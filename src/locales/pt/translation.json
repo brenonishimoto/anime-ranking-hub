@@ -1,0 +1,15 @@
+{
+  "header": {
+    "opening": "Opening",
+    "ending": "Ending"
+  },
+  "home": {
+    "welcome": "Bem-vindo",
+    "title": "Central de Rankings de Anime"
+  },
+  "settings": {
+    "title": "Configurações",
+    "language": "Idioma",
+    "back": "Voltar"
+  }
+}
