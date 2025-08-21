@@ -1,0 +1,170 @@
+.featuredSection {
+    padding: 4rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.rankingsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.rankingCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.cardHeader {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.rankingImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.rankingInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.rankingTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.currentWinner {
+    display: flex;
+    flex-direction: column;
+}
+
+.songInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.anime {
+    font-size: 0.9rem;
+    color: #667eea;
+    font-weight: 500;
+}
+
+.song {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.artist {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.votes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.voteCount {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.voteLabel {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.voteButton {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        background: linear-gradient(135deg, #7b8ff0 0%, #8a5fb0 100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .featuredSection {
+        padding: 3rem 1rem;
+    }
+    
+    .sectionTitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .rankingsGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .rankingCard {
+        padding: 1rem;
+    }
+    
+    .cardHeader {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .rankingImage {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+}

@@ -11,15 +11,30 @@ const Header = () => {
         navigate('/settings');
     };
 
+    const handleOpeningClick = () => {
+        navigate('/opening');
+    };
+
+    const handleEndingClick = () => {
+        navigate('/ending');
+    };
+
+    const handleHomeClick = () => {
+        navigate('/');
+    };
+
     return (
         <header className={styles.header}>
+            <div className={styles.logo} onClick={handleHomeClick}>
+                🎵 Anime Ranking Hub
+            </div>
             <nav className={styles.nav}>
-                <a href="opening-ranking" className={styles.link}>
-                    {t('header.opening', 'Opening')}
-                </a>
-                <a href="ending-ranking" className={styles.link}>
-                    {t('header.ending', 'Ending')}
-                </a>
+                <button onClick={handleOpeningClick} className={styles.link}>
+                    {t('header.opening')}
+                </button>
+                <button onClick={handleEndingClick} className={styles.link}>
+                    {t('header.ending')}
+                </button>
             </nav>
             <div>
                 <button

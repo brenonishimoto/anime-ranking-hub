@@ -4,8 +4,37 @@
     "ending": "Ending"
   },
   "home": {
-    "welcome": "Welcome",
-    "title": "Anime Ranking Hub"
+    "welcome": "Welcome to",
+    "title": "Anime Ranking Hub",
+    "subtitle": "Discover and rank the best anime music",
+    "quickStart": "Get Started",
+    "featuredTitle": "Featured Rankings",
+    "recentTitle": "Recent Activity",
+    "statsTitle": "Statistics",
+    "categories": {
+      "opening": {
+        "title": "Opening Rankings",
+        "description": "Vote for the best anime openings"
+      },
+      "ending": {
+        "title": "Ending Rankings",
+        "description": "Vote for the best anime endings"
+      },
+      "ost": {
+        "title": "Soundtracks",
+        "description": "Rank the best anime OSTs"
+      }
+    },
+    "stats": {
+      "totalVotes": "Total Votes",
+      "activeRankings": "Active Rankings",
+      "contributors": "Contributors"
+    },
+    "actions": {
+      "createRanking": "Create Ranking",
+      "viewAll": "View All",
+      "participate": "Participate"
+    }
   },
   "settings": {
     "title": "Settings",

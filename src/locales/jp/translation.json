@@ -5,7 +5,36 @@
   },
   "home": {
     "welcome": "ようこそ",
-    "title": "アニメランキングハブ"
+    "title": "アニメランキングハブ",
+    "subtitle": "最高のアニメ音楽を発見してランキング",
+    "quickStart": "始める",
+    "featuredTitle": "注目のランキング",
+    "recentTitle": "最近の活動",
+    "statsTitle": "統計",
+    "categories": {
+      "opening": {
+        "title": "オープニングランキング",
+        "description": "最高のアニメオープニングに投票"
+      },
+      "ending": {
+        "title": "エンディングランキング",
+        "description": "最高のアニメエンディングに投票"
+      },
+      "ost": {
+        "title": "サウンドトラック",
+        "description": "最高のアニメOSTをランク付け"
+      }
+    },
+    "stats": {
+      "totalVotes": "総投票数",
+      "activeRankings": "アクティブランキング",
+      "contributors": "貢献者"
+    },
+    "actions": {
+      "createRanking": "ランキング作成",
+      "viewAll": "すべて表示",
+      "participate": "参加"
+    }
   },
   "settings": {
     "title": "設定",

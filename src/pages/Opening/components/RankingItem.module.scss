@@ -1,0 +1,183 @@
+.rankingItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    &.dragging {
+        opacity: 0.5;
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+}
+
+.positionSection {
+    flex-shrink: 0;
+}
+
+.position {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.animeImage {
+    flex-shrink: 0;
+    width: 64px;
+    height: 90px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.animeInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.animeTitle {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+}
+
+.animeDetails {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
+.japaneseTitle {
+    display: block;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.year {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.openingInfo {
+    font-size: 0.9rem;
+}
+
+.openingTitle {
+    color: #667eea;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.openingArtist {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.dragHandle {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    cursor: grab;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+        color: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+.removeButton {
+    background: rgba(220, 53, 69, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    color: #dc3545;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    
+    &:hover {
+        background: rgba(220, 53, 69, 0.3);
+        border-color: rgba(220, 53, 69, 0.5);
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .rankingItem {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+    
+    .position {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .animeImage {
+        width: 56px;
+        height: 78px;
+    }
+    
+    .animeTitle {
+        font-size: 1rem;
+    }
+    
+    .animeDetails,
+    .openingInfo {
+        font-size: 0.8rem;
+    }
+    
+    .actions {
+        flex-direction: row;
+        gap: 0.25rem;
+    }
+}

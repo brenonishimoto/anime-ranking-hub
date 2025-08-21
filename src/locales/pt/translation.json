@@ -4,8 +4,51 @@
     "ending": "Ending"
   },
   "home": {
-    "welcome": "Bem-vindo",
-    "title": "Central de Rankings de Anime"
+    "welcome": "Bem-vindo ao",
+    "title": "Anime Ranking Hub",
+    "subtitle": "Descubra e classifique as melhores músicas de anime",
+    "quickStart": "Começar Agora",
+    "featuredTitle": "Rankings em Destaque",
+    "recentTitle": "Atividade Recente",
+    "statsTitle": "Estatísticas",
+    "categories": {
+      "opening": {
+        "title": "Rankings de Openings",
+        "description": "Vote nas melhores aberturas de anime"
+      },
+      "ending": {
+        "title": "Rankings de Endings",
+        "description": "Vote nos melhores encerramentos de anime"
+      },
+      "ost": {
+        "title": "Trilhas Sonoras",
+        "description": "Classifique as melhores OSTs"
+      }
+    },
+    "stats": {
+      "totalVotes": "Total de Votos",
+      "activeRankings": "Rankings Ativos",
+      "contributors": "Colaboradores"
+    },
+    "actions": {
+      "createRanking": "Criar Ranking",
+      "viewAll": "Ver Todos",
+      "participate": "Participar"
+    }
+  },
+  "opening": {
+    "title": "Top 10 Anime Openings",
+    "subtitle": "Crie seu ranking personalizado das melhores aberturas de anime",
+    "createRanking": "Criar Meu Ranking",
+    "searchAnime": "Pesquisar Anime",
+    "authorName": "Seu Nome",
+    "saveRanking": "Salvar Ranking",
+    "cancel": "Cancelar",
+    "selectAnime": "Escolher Anime",
+    "savedRankings": "Rankings Salvos",
+    "noAnimeSelected": "Nenhum anime selecionado ainda",
+    "dragToReorder": "Arraste os itens para reordená-los",
+    "confirmDelete": "Tem certeza que deseja excluir este ranking?"
   },
   "settings": {
     "title": "Configurações",
