@@ -1,0 +1,230 @@
+.animeCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &.dragging {
+    transform: rotate(5deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+}
+
+.dragHandle {
+  cursor: grab;
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  user-select: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.rank {
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.animeImage {
+  width: 80px;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.animeInfo {
+  flex: 1;
+  min-width: 0;
+
+  .animeTitle {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .originalTitle {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .animeDetails {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+
+    .year, .score {
+      font-size: 0.9rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+  }
+
+  .genres {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    .genre {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(103, 126, 234, 0.3);
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+  }
+
+  .selectedOpening {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    .openingLabel {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .openingInfo {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      background: rgba(255, 215, 0, 0.1);
+      padding: 0.8rem;
+      border-radius: 10px;
+      border-left: 4px solid rgba(255, 215, 0, 0.6);
+
+      .openingNumber {
+        color: rgba(255, 215, 0, 1);
+        font-weight: 700;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .openingText {
+        color: white;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.removeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 69, 58, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  &:hover {
+    background: rgba(255, 69, 58, 1);
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .animeCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .dragHandle {
+    order: -1;
+    align-self: center;
+  }
+
+  .rank {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+
+  .animeImage {
+    width: 100px;
+    height: 150px;
+    margin: 0.5rem 0;
+  }
+
+  .animeInfo {
+    .animeDetails {
+      justify-content: center;
+    }
+
+    .genres {
+      justify-content: center;
+    }
+  }
+
+  .removeButton {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 1rem;
+  }
+}

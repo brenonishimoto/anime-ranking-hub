@@ -1,0 +1,449 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+
+  h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.searchSection {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+
+  .searchInput {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .searchHint {
+    margin: 0.5rem 0 0 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+}
+
+.resultsSection {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  min-height: 300px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: white;
+
+  .spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.noResults {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+
+  p {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.animeResult {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.animeCard {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.animeImage {
+  width: 60px;
+  height: 90px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.animeInfo {
+  flex: 1;
+  min-width: 0;
+  color: white;
+
+  .animeTitle {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .originalTitle {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .animeDetails {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+
+    span {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+  }
+
+  .genres {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+
+    .genre {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.4rem;
+      background: rgba(103, 126, 234, 0.3);
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.expandButton {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: white;
+    transform: scale(1.2);
+  }
+}
+
+.openingsSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+}
+
+.openingsList {
+  .openingsTitle {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+  }
+}
+
+.openingItem {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  align-items: flex-start;
+
+  &:hover:not(.selected) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+  }
+
+  &.selected {
+    background: rgba(76, 175, 80, 0.3);
+    border: 2px solid rgba(76, 175, 80, 0.6);
+    cursor: default;
+  }
+
+  .openingNumber {
+    color: rgba(255, 215, 0, 0.9);
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    min-width: 2rem;
+  }
+
+  .openingText {
+    color: white;
+    flex: 1;
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+
+  .selectedBadge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: rgba(76, 175, 80, 0.9);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.noOpenings {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+  }
+}
+
+.loadingOpenings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+
+  .miniSpinner {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}
+
+.initialState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: rgba(255, 255, 255, 0.6);
+
+  .searchIcon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+    max-height: 95vh;
+  }
+
+  .modalHeader {
+    padding: 1rem 1.5rem;
+
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+
+  .searchSection {
+    padding: 1.5rem;
+  }
+
+  .animeCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+
+    .animeImage {
+      align-self: center;
+      width: 80px;
+      height: 120px;
+    }
+
+    .animeDetails {
+      justify-content: center;
+    }
+
+    .genres {
+      justify-content: center;
+    }
+  }
+
+  .expandButton {
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  .openingsSection {
+    padding: 1rem;
+  }
+
+  .openingItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+
+    .openingNumber {
+      align-self: center;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .selectedBadge {
+      position: relative;
+      top: auto;
+      right: auto;
+      align-self: center;
+      margin-top: 0.5rem;
+    }
+  }
+}
